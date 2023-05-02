@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_pdfgen_preview_wizard" model="ir.ui.view">
+            <field name="name">pdfgen.preview.wizard.form</field>
+            <field name="model">pdfgen.preview.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="res_id" />
+                            <field name="file"
+                                attrs="{'invisible': ['|', ('res_id', '=', False), ('file', '=', False)]}"
+                                widget="pdf_preview"
+                                string="Preview" />
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Dismiss"
+                                special="cancel"
+                                class="oe_link" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

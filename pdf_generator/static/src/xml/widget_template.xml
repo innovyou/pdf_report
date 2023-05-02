@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<templates xml:space="preserve">
+    <t t-name="PdfPreviewWidget">
+        <span t-att-class="'oe_form_field '+widget.widget_class" t-att-style="widget.attrs.style">
+            <a href="#" class="oe_field_pdf_preview">Preview</a>
+        </span>
+    </t>
+
+    <t t-name="PdfPreviewModal">
+        <div class="pdf-preview-modal">
+            <div id="open-modal" class="modal-window">
+                <div>
+                    <a href="#" title="Close" class="modal-close">
+                        <i class="fa fa-close"></i>
+                    </a>
+                    <iframe
+                        t-att="{'src': iframe_data}"
+                        type="application/pdf"
+                        frameBorder="0"
+                        scrolling="auto"
+                        height="100%"
+                        width="100%"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

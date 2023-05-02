@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_pdfgen_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_pdf_generator_group"/>
+        </record>
+
+        <record id="group_pdfgen_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="module_pdf_generator_group" />
+            <field name="implied_ids" eval="[(4,ref('pdf_generator.group_pdfgen_user'))]"/>
+        </record>
+    </data>
+</odoo>

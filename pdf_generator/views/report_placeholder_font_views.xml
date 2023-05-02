@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id='view_pdfgen_report_placeholder_font_tree' model='ir.ui.view' >
+            <field name="name">pdfgen.report.placeholder.font.tree</field>
+            <field name="model">pdfgen.report.placeholder.font</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" />
+                    <field name="font" required="1" force_save="1" attrs="{'invisible': [('default_font', '=', True)]}"/>
+                    <field name="default_font" invisible="1" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

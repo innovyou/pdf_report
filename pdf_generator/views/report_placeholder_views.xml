@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id='view_pdfgen_report_placeholder_form' model='ir.ui.view' >
+            <field name="name">pdfgen.report.placeholder.form</field>
+            <field name="model">pdfgen.report.placeholder</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="report_id" invisible="1" />
+                        
+                        <h1>
+                            <field name="name"
+                                readonly="0"
+                                force_save="1"
+                                attrs="{'invisible': [('id', '=', False)]}"/>
+                        </h1>
+
+                        <group>
+                            <field name="name"
+                                attrs="{'invisible': [('id', '!=', False)]}"/>
+                        </group>
+
+                        <group string="Code">
+                            <field name="text_field" widget="ace" />
+                        </group>
+
+                        <group col="2">
+                            <group string="Position">
+                                <field name="page" options='{"type": "number", "step": 1}' />
+                                <field name="position_x" />
+                                <field name="position_y" />
+                                <field name="text_alignment" />
+                            </group>
+                            <group string="Appearance">
+                                <field name="text_size" options='{"type": "number", "step": 2}'/>
+                                <field name="text_color" widget="colorpicker" />
+                                <field name="text_font_id" options='{"no_open": True, "no_create": True}' />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
